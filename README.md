@@ -117,4 +117,108 @@ WHERE Country='Wales';
 
 The above command would return all customers from Wales.
 
+#### Text Fields vs. Numeric Fields
+
+SQL requires single quotes around text values (most database systems will also allow double quotes).
+
+However, numeric fields should not be enclosed in quotes:
+
+```SQL
+SELECT *
+FROM Customers
+WHERE Customer ID=1;
+```
+
+#### Operators in The WHERE Clause
+
+The following operators can be used in the WHERE clause:
+
+* =	Equal	
+* >	Greater than	
+* <	Less than	
+* >=	Greater than or equal	
+* <=	Less than or equal	
+* <>	Not equal. Note: In some versions of SQL this operator may be written as !=	
+* BETWEEN	Between a certain range	
+* LIKE	Search for a pattern	
+* IN	To specify multiple possible values for a column
+
+#### The SQL AND, OR and NOT Operators
+
+The WHERE clause can be combined with AND, OR, and NOT operators.
+
+The AND and OR operators are used to filter records based on more than one condition:
+
+* The AND operator displays a record if all the conditions separated by AND are TRUE.
+* The OR operator displays a record if any of the conditions separated by OR is TRUE.
+* The NOT operator displays a record if the condition(s) is NOT TRUE.
+
+##### AND Syntax
+
+``` SQL
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 AND condition2 AND condition3 ...;
+
+SELECT * FROM Customers
+WHERE Country='Germany' AND City='Berlin';
+```
+##### OR Syntax
+
+``` SQL
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 OR condition2 OR condition3 ...;
+
+SELECT * FROM Customers
+WHERE City='Berlin' OR City='München';
+```
+
+##### NOT Syntax
+
+```SQL
+SELECT column1, column2, ...
+FROM table_name
+WHERE NOT condition;
+
+SELECT *
+FROM Customers
+WHERE NOT Country='Germany';
+```
+
+#### Combining AND, OR and NOT
+
+You can also combine the AND, OR and NOT operators.
+
+The following SQL statement selects all fields from "Customers" where country is "Germany" AND city must be "Berlin" OR "München" (use parenthesis to form complex expressions):
+
+``` SQL
+SELECT *
+FROM Customers
+WHERE Country='Germany' AND (City='Berlin' OR City='München');
+```
+
+The following SQL statement selects all fields from "Customers" where country is NOT "Germany" and NOT "USA":
+
+``` SQL
+SELECT *
+FROM Customers
+WHERE NOT Country='Germany' AND NOT Country='USA';
+```
+
+Exercise:
+
+Select all records where the City column has the value 'Berlin' and the PostalCode column has the value 12209.
+
+``` SQL
+SELECT *
+FROM Customers
+WHERE City = 'Berlin' AND PostalCode = 12209;
+```
+
+
+
+
+
+
 
