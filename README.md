@@ -1,5 +1,7 @@
 # Learn SQL
 
+![image](https://user-images.githubusercontent.com/91537105/154952678-c1af65aa-d1f0-4dbc-b272-8bb3efe63988.png)
+
 ## Introduction to SQL
 
 SQL is a standard language for accessing and manipulating databases.
