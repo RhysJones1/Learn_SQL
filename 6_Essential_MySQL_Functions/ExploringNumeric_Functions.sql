@@ -1,0 +1,6 @@
+SELECT ROUND(5.73, 1) AS Round;
+SELECT TRUNCATE(5.5733, 2) AS Trunc;
+SELECT CEILING(5.7) AS Ceil;
+SELECT FLOOR(5.7) AS Floor;
+SELECT ABS(-5.2) AS 'Absolute number';
+SELECT RAND() AS Random;
